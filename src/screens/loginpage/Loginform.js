@@ -2,7 +2,7 @@
 import React, { useState, useEffect } from "react"
 import { Link } from "react-router-dom";
 import "../../styles/App.css";
-import Axios from "axios"
+import axios from "axios"
 import Login from "./Login";
 import { UserContext } from "../../context/UserContext";
 
@@ -31,27 +31,26 @@ const Loginform = () => {
             // console.log(details);
 
             
-
-            const FetchDetails = async () => {
-                // console.log("RESPONSE000: ", email, password)
-                const {data}=Axios.put("http://ec2-3-7-168-72.ap-south-1.compute.amazonaws.com:15010/user/get/password",{
-                    "email" : details.email,
-                    "password": details.password
+            
+        const FetchDetails = async () => {
+                    // console.log("RESPONSE000: ", email, password)
+            
+            try{
+                const data= await axios.put("http://ec2-3-7-168-72.ap-south-1.compute.amazonaws.com:15010/user/get/password",{
+                        "email" : details.email,
+                        "password": details.password
+                        })     
+                         console.log(data);
+                        setUrl("/dashboard")
+                        console.log("firsturl",url);
+            } catch (e){
+                console.log(e);
+                alert("wrong credentials")
+            } 
+        };    
+             
                     
-                }
-                )     
-    
-                .then(res =>{
-                  
-                    console.log(data);
-                    setUrl("/dashboard")
-                    // console.log(url);
-                     
-                })
-                .catch(err => {
-                    console.log("error");
-                    alert("wrong credentials")
-                })
+            
                 
             
 
@@ -73,7 +72,7 @@ const Loginform = () => {
                 // console.log("RESPONSE1: ", details);
               
                 //setDetails(details) 
-              };
+            //   };
            
 
             FetchDetails();
@@ -84,11 +83,12 @@ const Loginform = () => {
              
     }
 
-    // const effecturl = () =>(
-    //     setUrl("/dashboard")
-    // )
+    // const effecturl = () =>{
+    //     console.log("thirdeffect",url);
+    //     setUrl(url)
+    // }
      useEffect(()=>{
-                    console.log(url);
+                    console.log("aftereffect",url);
                     // effecturl();
        },[url])
     
