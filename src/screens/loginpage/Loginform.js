@@ -50,6 +50,7 @@ const Loginform = () => {
                 })
                 .catch(err => {
                     console.log("error");
+                    alert("wrong credentials")
                 })
                 
             
