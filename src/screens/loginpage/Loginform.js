@@ -83,12 +83,12 @@ const Loginform = () => {
              
     }
 
-    const effecturl = () =>(
-        setUrl("/dashboard")
-    )
+    // const effecturl = () =>(
+    //     setUrl("/dashboard")
+    // )
      useEffect(()=>{
                     console.log(url);
-                    effecturl();
+                    // effecturl();
        },[url])
     
 
