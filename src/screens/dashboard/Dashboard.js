@@ -36,6 +36,7 @@ const Dashboard =() => {
                     
                 </tbody>
             </ReactBootStrap.Table>
+            <Link to="/register">Another dashboard</Link>
     </div>
     );
 }
