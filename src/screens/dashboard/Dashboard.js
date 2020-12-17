@@ -1,5 +1,11 @@
 import React from "react";
 import * as ReactBootStrap from 'react-bootstrap';
+import {
+    BrowserRouter as Router,
+    Switch,
+    Route,
+    Link
+  } from "react-router-dom";
 
 
 const Dashboard =() => {
@@ -36,7 +42,7 @@ const Dashboard =() => {
                     
                 </tbody>
             </ReactBootStrap.Table>
-            <Link to="/register">Another dashboard</Link>
+            <Link to="/dashboard2">Another dashboard</Link>
     </div>
     );
 }
