@@ -1,0 +1,92 @@
+body{
+  padding: 0;
+  margin: 0;
+}
+
+.app{
+    height: 100vh;
+  }
+  
+  .login{
+    height: 100vh;
+    display: flex;
+    color: gray;
+    flex-wrap: wrap;
+  }
+  .loginform{
+      flex: 1;
+      display: flex;
+      flex-direction: column;
+  }
+    .loginicon{
+        flex: 0.5;
+        padding: 100px 0px 0px 100px;
+    }
+    .loginforms{
+        flex: 3.5;
+        display: flex;
+        flex-direction: column;
+        /* justify-content: center; */
+        align-items: center;
+    }
+    input{
+        width: 300px;
+        height: 30px;
+        margin-bottom: 30px;
+        border: none;
+        outline: none;
+        border-bottom: 1px double;
+        font-size: 20px;
+    }
+    button{
+        width: 308px;
+        height: 30px;
+        color: white;
+        background-color: rgb(49, 49, 49);
+        margin-top: -10px;
+        margin-bottom: 30px;
+    }
+    .another{
+        display: flex;
+        font-size: 12px;
+    }
+  .loginswiper{
+      flex: 1;
+  }
+ .loginswiper img{
+    width: 100%;
+    height: 100%;
+  }
+  
+
+  .swiper-container {
+    width: 100%;
+    height: 100%;
+  }
+
+  .swiper-slide {
+    text-align: center;
+    font-size: 18px;
+    background: #fff;
+
+    /* Center slide text vertically */
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: -webkit-flex;
+    display: flex;
+    -webkit-box-pack: center;
+    -ms-flex-pack: center;
+    -webkit-justify-content: center;
+    justify-content: center;
+    -webkit-box-align: center;
+    -ms-flex-align: center;
+    -webkit-align-items: center;
+    align-items: center;
+  }
+
+  
+  @media only screen and (max-width: 1200px) {
+    .loginswiper{
+      display: none;
+    }
+  }

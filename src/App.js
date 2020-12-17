@@ -1,24 +1,68 @@
-import logo from './logo.svg';
-import './App.css';
+import React, {useState, useEffect} from "react"
+import "./styles/App.css"
+import Axios from "axios"
+import {
+  BrowserRouter as Router,
+  Switch,
+  Route,
+  Link
+} from "react-router-dom"; 
+import Dashboard from "./screens/dashboard/Dashboard";
+import Login from "./screens/loginpage/Login";
 
-function App() {
+import 'react-bootstrap-table-next/dist/react-bootstrap-table2.min.css';
+import 'react-bootstrap-table2-paginator/dist/react-bootstrap-table2-paginator.min.css';
+
+
+import { UserContext } from "./context/UserContext";
+import Dashboard2 from "./screens/dashboard/Dashboard2";
+
+
+const App =() =>{
+  const [user, setUser] = useState(null)
+  const [details, setDetails]= useState('')
+
+  const fetchDetails = async () => {
+      const {data} = await Axios.put("http://ec2-3-7-168-72.ap-south-1.compute.amazonaws.com:15010/user/get/password",{
+            "email" : "rizwanperisync@gmail.com",
+            "password": "Rizwan@123"
+        });
+       
+      // console.log("RESPONSE: ", data.token);
+      
+    
+    
+      // const details = data.results[0]
+      // console.log("RESPONSE1: ", details);
+    
+      setDetails(details) 
+    };
+    
+      useEffect(()=>{
+        fetchDetails()
+      },[])
+
+
+
+
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <Router>
+                <UserContext.Provider value={{user,setUser}}>
+                    <Switch>
+                                <Route exact path="/">
+                                      <Login/>
+                                </Route>
+                                
+                                <Route exact path="/dashboard">
+                                      <Dashboard/>
+                                </Route>
+                                <Route path="/dashboard2">
+                                    <Dashboard2/>
+                                </Route>
+                                
+                    </Switch>
+                </UserContext.Provider>
+        </Router>
   );
 }
 
