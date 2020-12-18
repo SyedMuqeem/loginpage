@@ -15,7 +15,7 @@ const LoginSwiper = () => {
   
     return(
       <div>
-       <img src="car1.png"/>
+       <img src="https://media.giphy.com/media/JoyU4vuzwj6ZA7Ging/giphy.gif"/>
       </div>
        )
 }
