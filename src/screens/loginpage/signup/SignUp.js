@@ -105,6 +105,7 @@ const SignUp= () => {
     const [regDetails, setRegDetails] = useState({
         firstname:"" , lastname:"",email1:"", password1:""
     })
+    const [usersucessful, setUsersucessful] = useState("")
 
 
     const registrationfinal = () => {
@@ -127,6 +128,7 @@ const SignUp= () => {
                                 )  
                                 
                                 console.log(data.data);
+                                setUsersucessful(data.data)
                                
                                  
                     } catch (e){
@@ -150,7 +152,19 @@ const SignUp= () => {
     return(
         <div className="login">
                     <div className="loginform">
-                    <div className="loginicon">
+                            {usersucessful?(
+                            
+                            
+                                <div>
+                                    <h1>Sucessfully created</h1>
+                                </div>
+                            
+                            
+                            
+                            
+                            ):(
+                                <div>
+                                    <div className="loginicon">
                             <img src={"logo.png"}
                                     alt="pic" 
                                     height='19px'/>
@@ -250,6 +264,8 @@ const SignUp= () => {
                         </div>
                     </form>
                 </div>
+                                </div>
+                            )}
                     </div>
         <div className="loginswiper"><LoginSwiper/></div>
         </div>
