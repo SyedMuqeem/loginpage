@@ -37,6 +37,7 @@ body{
         outline: none;
         border-bottom: 1px double;
         font-size: 20px;
+        background: none;
     }
     button{
         width: 308px;
@@ -54,6 +55,11 @@ body{
         display: flex;
         font-size: 12px;
     }
+.listsform{
+  margin-left: 4px;
+  margin-top: 5px;
+}
+
   .loginswiper{
       flex: 1;
   }
@@ -62,6 +68,11 @@ body{
     height: 100%;
   }
   
+  .otptextfield{
+    margin-left: 4px;
+    margin-top: 10px;
+    background: none;
+  }
 
   .swiper-container {
     width: 100%;
