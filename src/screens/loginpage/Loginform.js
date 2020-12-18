@@ -2,7 +2,7 @@
 import React, { useState, useEffect } from "react"
 import { Link } from "react-router-dom";
 import "../../styles/App.css";
-import axios from "axios"
+import Axios from "axios"
 import Login from "./Login";
 import { UserContext } from "../../context/UserContext";
 import Dashboard from "../dashboard/Dashboard";
@@ -38,11 +38,12 @@ const Loginform = () => {
                     // console.log("RESPONSE000: ", email, password)
             
             try{
-                const data= await axios.put("http://ec2-3-7-168-72.ap-south-1.compute.amazonaws.com:15010/user/get/password",{
+                const data= await Axios.put("http://ec2-3-7-168-72.ap-south-1.compute.amazonaws.com:15010/user/get/password",{
                         "email" : details.email,
                         "password": details.password
                         })     
                          console.log(data);
+                         console.log(data.request?.status);
                         setUrl("/dashboard")
                         console.log("firsturl",url);
                         setLoading(true)
@@ -103,12 +104,12 @@ const Loginform = () => {
             {loading ? (
                 <Dashboard/>  
             ) :(
-                <div>
+                <div className="loginform">
                     <div className="loginicon">
-            <img src={"logo.png"}
-                    alt="pic" 
-                    height='19px'/>
-            </div>
+                            <img src={"logo.png"}
+                                    alt="pic" 
+                                    height='19px'/>
+                    </div>
             <form>
                 <div className="loginforms">
                     <div className="createacount"><h1>Login account</h1></div>
@@ -125,7 +126,7 @@ const Loginform = () => {
                         ></input>
                     </div>
 
-                    <Link to={url}><button 
+                    <Link to={url}><button className="button-reg"
                     onClick={() => login() }
                            >Sign in</button></Link>
                     <div className="another">

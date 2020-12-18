@@ -16,6 +16,7 @@ import 'react-bootstrap-table2-paginator/dist/react-bootstrap-table2-paginator.m
 
 import { UserContext } from "./context/UserContext";
 import Dashboard2 from "./screens/dashboard/Dashboard2";
+import SignUp from "./screens/loginpage/signup/SignUp";
 
 
 const App =() =>{
@@ -58,6 +59,9 @@ const App =() =>{
                                 </Route>
                                 <Route path="/dashboard2">
                                     <Dashboard2/>
+                                </Route>
+                                <Route path="/signup">
+                                    <SignUp/>
                                 </Route>
                                 
                     </Switch>

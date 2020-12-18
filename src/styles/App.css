@@ -46,6 +46,10 @@ body{
         margin-top: -10px;
         margin-bottom: 30px;
     }
+    .button-reg{
+      margin-top: 30px;
+      margin-bottom: 20px;
+    }
     .another{
         display: flex;
         font-size: 12px;
