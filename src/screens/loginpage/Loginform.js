@@ -5,6 +5,7 @@ import "../../styles/App.css";
 import axios from "axios"
 import Login from "./Login";
 import { UserContext } from "../../context/UserContext";
+import Dashboard from "../dashboard/Dashboard";
 
 
 const Loginform = () => {
@@ -15,6 +16,7 @@ const Loginform = () => {
    const [email, setEmail] = useState("")
    const [password, setPassword] = useState("")
    var [url, setUrl] =useState("/")
+   const [loading, setLoading] = useState(false);
 
    const [details, setDetails] = useState({
        email:"" , password:""
@@ -43,6 +45,7 @@ const Loginform = () => {
                          console.log(data);
                         setUrl("/dashboard")
                         console.log("firsturl",url);
+                        setLoading(true)
             } catch (e){
                 console.log(e);
                 alert("wrong credentials")
@@ -97,7 +100,11 @@ const Loginform = () => {
    
     return(
         <div className="loginform">
-            <div className="loginicon">
+            {loading ? (
+                <Dashboard/>  
+            ) :(
+                <div>
+                    <div className="loginicon">
             <img src={"logo.png"}
                     alt="pic" 
                     height='19px'/>
@@ -129,6 +136,8 @@ const Loginform = () => {
 
                 </div>
             </form>
+                </div>
+            )}
 
         </div>
     )
