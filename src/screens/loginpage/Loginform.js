@@ -6,11 +6,26 @@ import Axios from "axios"
 import Login from "./Login";
 import { UserContext } from "../../context/UserContext";
 import Dashboard from "../dashboard/Dashboard";
+import { faAddressBook, faEyeSlash } from "@fortawesome/free-solid-svg-icons";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+// import PasswordVisible from "../../Hooks/PasswordVisible";
 
 
 const Loginform = () => {
 
+    const [visible, setVisible] = useState(false)
+    const [icon, setIcon] = useState("openeye.png")
+    const [inputType, setInputType] = useState("password")
 
+const changevisibility = () =>{
+   const visibles = () =>{
+                setIcon(visible ? "openeye.png" : "closedeye.png")
+
+                setInputType (visible ? "password" : "text")
+                setVisible(!visible)
+   }
+   visibles();
+}
 
        
    const [email, setEmail] = useState("")
@@ -108,7 +123,8 @@ const Loginform = () => {
                     <div className="loginicon">
                             <img src={"logo.png"}
                                     alt="pic" 
-                                    height='19px'/>
+                                    height='30px'
+                                    />
                     </div>
             <form>
                 <div className="loginforms">
@@ -119,11 +135,12 @@ const Loginform = () => {
                             onChange={e => setDetails({...details,email:e.target.value})}
                         ></input>
                     </div>
-                    <div className="passwordbox">
+                    <div className="passwordbox" className="visiIconForPass">
                         <div className="password">Password</div>
-                        <input type="password" id="pass" placeholder="*********"
+                        <div ><input  type={inputType} id="pass" placeholder="*********"
                              onChange={e => setDetails({...details,password:e.target.value})}
                         ></input>
+                        <img src={icon} width="20px" onClick={() => changevisibility()}/></div>
                     </div>
 
                     <Link to={url}><button className="button-reg"

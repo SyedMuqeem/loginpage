@@ -21,6 +21,7 @@ body{
     .loginicon{
         flex: 0.5;
         padding: 100px 0px 0px 100px;
+        border-radius: 30px;
     }
     .loginforms{
         flex: 3.5;
@@ -81,6 +82,9 @@ body{
     .another{
         display: flex;
         font-size: 12px;
+    }
+    .visiIconForPass{
+      margin-left: 15px;
     }
 .listsform{
   margin-left: 4px;

@@ -169,7 +169,7 @@ const SignUp= () => {
                                     <div className="loginicon">
                             <img src={"logo.png"}
                                     alt="pic" 
-                                    height='19px'/>
+                                    height='30px'/>
                     </div>
                 <div className="loginform">
                     <form>
