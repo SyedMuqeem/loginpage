@@ -130,9 +130,12 @@ const Loginform = () => {
                     onClick={() => login() }
                            >Sign in</button></Link>
                     <div className="another">
-                        <div>Already have an account? </div>
+                        <div>Dont have Account? </div>
                         <Link to="/signup"><div>Register</div></Link>
                     </div>
+                    <div className="a">
+                                <Link to="/forgetpassword"><div>Forget password?</div></Link>
+                            </div>
                     
 
                 </div>

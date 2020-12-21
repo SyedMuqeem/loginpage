@@ -28,6 +28,33 @@ body{
         flex-direction: column;
         /* justify-content: center; */
         align-items: center;
+        background-color: rgba(255,255,255,0.08);
+    }
+
+    /* body{
+      min-height: 100vh;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      background-image: url('bg.jpg');
+      background-repeat: no-repeat;
+      background-position: center;
+      background-size: cover;
+      font-family: 'Poppins', sans-serif;
+      color: #fff;
+    } */
+::placeholder{
+  color: rgb(168, 168, 168);
+}
+    .card{
+      text-align: center;
+      padding: 30px 20px;
+      letter-spacing: 1px;
+      border-radius: 25px;
+    
+      /* responsible for the glass effect */	
+      background-color: rgba(255,255,255,0.08);
+      backdrop-filter:blur(12px);
     }
     input{
         width: 300px;
@@ -43,7 +70,7 @@ body{
         width: 308px;
         height: 30px;
         color: white;
-        background-color: rgb(49, 49, 49);
+        background-color: rgb(109, 109, 109);
         margin-top: -10px;
         margin-bottom: 30px;
     }

@@ -12,7 +12,7 @@ import {
 const SignUp= () => {
 
     
-
+    const[loading, setLoading] = useState(false)
     const [details, setDetails] = useState({
         email:"" , password:"",type:"REGISTRATION", otp:""
     })
@@ -30,6 +30,7 @@ const SignUp= () => {
 
 
             const fetchregtoken= async () => {
+                setLoading(true)
                 try{
                     const {data}= await Axios.post("http://3.7.168.72:15010/user/check",{
                             "mobile1" : details.email,
@@ -43,7 +44,8 @@ const SignUp= () => {
                              
                 } catch (e){
                     console.log("eror in num verify",e);
-                    alert("wrong credentials")
+                    alert("already Registered user")
+                    setLoading(false)
                 } 
 
                 console.log(token);
@@ -156,14 +158,14 @@ const SignUp= () => {
                             
                             
                                 <div>
-                                    <h1>Sucessfully created</h1>
+                                    <h1>Sucessfully Account created</h1>
                                 </div>
                             
                             
                             
                             
                             ):(
-                                <div>
+                                <div className="loginform">
                                     <div className="loginicon">
                             <img src={"logo.png"}
                                     alt="pic" 
@@ -227,13 +229,20 @@ const SignUp= () => {
                                             </div>
                                     </div>
                             
-                            ) : ( token && message ?(
+                            ) : (  loading?(
 
-                                <Link
+
+                                (token && message ? (
+                                    <Link
                                 //  to={url}
                                             ><button className="button-reg"
                                 onClick={() => sendotp() }
                                 >Send OTP</button></Link>
+                                ) : (
+                                    <Link><button className="button-reg">wait....</button></Link>
+                                ))
+
+                                
 
                             ) : (
 
@@ -256,8 +265,11 @@ const SignUp= () => {
 
 
                             <div className="another">
-                                <div>Already have an account? </div>
+                                <div>Already have an account </div>
                                 <Link to="/"><div>Login</div></Link>
+                            </div>
+                            <div className="a">
+                                <Link to="/forgetpassword"><div>Forget password?</div></Link>
                             </div>
                             
 
@@ -266,6 +278,13 @@ const SignUp= () => {
                 </div>
                                 </div>
                             )}
+
+
+                        <div className="another">
+                                <div>Account created </div>
+                                <Link to="/"><div>Click here to Login</div></Link>
+                            </div>
+                            
                     </div>
         <div className="loginswiper"><LoginSwiper/></div>
         </div>
