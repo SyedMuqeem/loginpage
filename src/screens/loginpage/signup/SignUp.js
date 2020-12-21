@@ -158,7 +158,17 @@ const SignUp= () => {
                             
                             
                                 <div>
+                                    <div>
                                     <h1>Sucessfully Account created</h1>
+                                    </div>
+
+
+
+
+                                    <div className="another">
+                                <div>Account created </div>
+                                <Link to="/"><div>Click here to Login</div></Link>
+                            </div>
                                 </div>
                             
                             
@@ -171,7 +181,7 @@ const SignUp= () => {
                                     alt="pic" 
                                     height='30px'/>
                     </div>
-                <div className="loginform">
+                <div >
                     <form>
                         <div className="loginforms">
                             <div className="createacount"><h1>Register account</h1></div>
@@ -280,10 +290,7 @@ const SignUp= () => {
                             )}
 
 
-                        <div className="another">
-                                <div>Account created </div>
-                                <Link to="/"><div>Click here to Login</div></Link>
-                            </div>
+                       
                             
                     </div>
         <div className="loginswiper"><LoginSwiper/></div>

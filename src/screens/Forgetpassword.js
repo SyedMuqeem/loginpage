@@ -43,6 +43,7 @@ const verifyNumForPassForget = () =>{
 
         console.log(token);
         console.log(message);
+        console.log(details.email);
     }
     fetchregtoken();
 }
@@ -185,7 +186,7 @@ const verifyPassword =() => {
                             </div>
                         </div>
                 ) : (
-                    message==="REGISTERED_USER"? (
+                    message==="REGISTERED_USER" && details.email != ""? (
                         <Link ><button className="button-reg"
                         onClick={() => sendOtpForVerification() }
                                >send otp</button></Link>

@@ -2,6 +2,12 @@ body{
   padding: 0;
   margin: 0;
 }
+form{
+  background-color: rgb(252, 252, 252);
+  margin: 0 25%;
+  padding: 10% 0%;
+	backdrop-filter:blur(25px);
+}
 
 .app{
     height: 100vh;
@@ -18,6 +24,7 @@ body{
       display: flex;
       flex-direction: column;
   }
+
     .loginicon{
         flex: 0.5;
         padding: 100px 0px 0px 100px;
@@ -30,6 +37,11 @@ body{
         /* justify-content: center; */
         align-items: center;
         background-color: rgba(255,255,255,0.08);
+    }
+    .spinner{
+      display: flex;
+      justify-content: center;
+      margin-top: 10%;
     }
 
     /* body{
@@ -134,5 +146,10 @@ body{
   @media only screen and (max-width: 1200px) {
     .loginswiper{
       display: none;
+    }
+  }
+  @media only screen and (max-width: 650px) {
+    form{
+      margin: 0;
     }
   }

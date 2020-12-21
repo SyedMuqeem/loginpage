@@ -40,7 +40,7 @@ const Dashboard2 = () => {
                 columns={column}
                 pagination={paginationFactory()}    
             />) :(
-                <ReactBootStrap.Spinner animation="border"/>
+                <div className="spinner"><ReactBootStrap.Spinner animation="border"/></div>
             )}
             
         </div>
